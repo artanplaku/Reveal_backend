@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-bppw&^g_b04ouzhoh4&i(t*vus9(d%ahw*7xy6!vrl2$8zez=q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+'https://reveal-store-backend.herokuapp.com']
 
 
 # Application definition
@@ -48,10 +49,12 @@ INSTALLED_APPS = [
     'reveal_app',
     'django_extensions',
     'rest_framework',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
