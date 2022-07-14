@@ -1,0 +1,14 @@
+{%load static%}
+<html>
+    <head>
+        <title>Reveal</title>
+        <link rel="stylesheet" href="{% static 'css/reveal_app.css' %}"/>
+    </head>
+    <body>
+        <h1>Reveal app</h1>
+        <nav>
+            <a href="/">Product</a>
+        </nav>
+        {% block content %} {% endblock %}
+    </body>
+</html>
