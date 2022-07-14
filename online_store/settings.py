@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'whitenoise.runserver_nostatic',
 ]
+WHITENOISE_USE_FINDERS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
