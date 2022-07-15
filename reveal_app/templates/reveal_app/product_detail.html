@@ -1,6 +1,7 @@
 {% extends 'reveal_app/base.html' %} {% block content %}
 <h2>{{product.name}} <a href="{% url 'artist_edit' pk=artist.pk %}">(Edit)</a></h2>
 <h4>{{product.description}}</h4>
+<h4>{{product.price}}</h4>
 
 <img src="{{product.img}}" alt="photo" class="artist-photo"/>
 
