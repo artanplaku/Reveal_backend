@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-bppw&^g_b04ouzhoh4&i(t*vus9(d%ahw*7xy6!vrl2$8zez=q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','http://localhost:3000/',
 'https://reveal-store-backend.herokuapp.com']
 
 
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'whitenoise.runserver_nostatic',
+    'corsheaders',
 ]
 WHITENOISE_USE_FINDERS = True
 
@@ -59,10 +60,12 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'online_store.urls'
