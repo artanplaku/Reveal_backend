@@ -68,6 +68,13 @@ MIDDLEWARE = [
     
 ]
 
+CORS_ALLOWED_ORIGINS = [
+'127.0.0.1',
+ 'localhost',
+ 'http://localhost:3000/',
+'https://reveal-store-backend.herokuapp.com'
+]
+
 ROOT_URLCONF = 'online_store.urls'
 
 TEMPLATES = [
