@@ -37,6 +37,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost','http://localhost:3000/',
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     ]
 }
 
