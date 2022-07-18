@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 import django_heroku
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,6 +56,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'whitenoise.runserver_nostatic',
     'corsheaders',
+    'users',
+    "rest_framework_simplejwt.token_blacklist",
 ]
 WHITENOISE_USE_FINDERS = True
 
@@ -70,6 +73,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
 ]
+SIMPLE_JWT = {
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=15),
+    "ROTATE_REFRESH_TOKENS": True,
+}
 
 CORS_ALLOWED_ORIGINS = [
 'http://127.0.0.1',
@@ -159,3 +166,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 django_heroku.settings(locals())
+
+AUTH_USER_MODEL = "users.NewUser"
