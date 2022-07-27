@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from .serializers import CustomUserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import AllowAny
+# from django.contrib.auth import get_user_model CustomUser = get_user_model()
 
 
 class CustomUserCreate(APIView):
@@ -22,6 +23,20 @@ class CustomUserCreate(APIView):
                 return Response(json, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+# class CustomUserGet(APIView):
+
+#     def get_user(self, username):
+#         try:
+#             return CustomUser.objects.get(username=username)
+#         except CustomUser.DoesNotExist:
+#             raise Http404
+
+#     def get(self, request, format='json'):
+#         user = self.get_user(request.user.username)
+#         serializer = CustomUserSerializer(user)
+#         return Response(serializer.data)
+
+
 
 class BlacklistTokenUpdateView(APIView):
     permission_classes = [AllowAny]
@@ -35,3 +50,8 @@ class BlacklistTokenUpdateView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+# class UsersList(generics.ListCreateAPIView):
+#     queryset = Product.objects.all()
+#     serializer_class = ProductSerializer

@@ -34,7 +34,8 @@ class CustomAccountManager(BaseUserManager):
         user.set_password(password)
         user.save()
         return user
-
+    def user_list(self):
+        return "hello world"
 
 class NewUser(AbstractBaseUser, PermissionsMixin):
 
@@ -53,3 +54,5 @@ class NewUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.user_name
+
+# class Users(models.Model):
