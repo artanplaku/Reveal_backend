@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-bppw&^g_b04ouzhoh4&i(t*vus9(d%ahw*7xy6!vrl2$8zez=q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','http://localhost:3000/',
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','http://localhost:3000/','https://reveal-store.surge.sh/'
 'https://reveal-store-backend.herokuapp.com']
 
 
@@ -71,7 +71,8 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
 'http://127.0.0.1',
 'http://localhost:3000',
-'https://reveal-store-backend.herokuapp.com'
+'https://reveal-store-backend.herokuapp.com',
+'https://reveal-store.surge.sh/'
 ]
 
 ROOT_URLCONF = 'online_store.urls'
